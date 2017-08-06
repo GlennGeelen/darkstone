@@ -16,12 +16,13 @@
   <body>
     <div class="container">
       <header class="header">
+<<<<<<< HEAD
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <%= if Coherence.logged_in?(@conn) do %>
               <li>Hello <%= Coherence.current_user_name(@conn) %></li>
               <li>
-                <%= DarkstoneWeb.Coherence.ViewHelpers.signout_link(@conn, "Sign Out", "btn btn-danger") %>
+                <%= link "logout", to: session_path(@conn, :delete), method: :delete, class: "btn btn-danger" %>
               </li>
             <% else %>
               <li>
@@ -31,6 +32,9 @@
           </ul>
         </nav>
         <span class="logo"></span>
+=======
+          <span class="logo"></span>
+>>>>>>> initial character controller setup
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

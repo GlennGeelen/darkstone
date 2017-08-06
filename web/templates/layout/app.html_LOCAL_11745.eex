@@ -9,8 +9,6 @@
 
     <title>Hello Darkstone!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
   <body>
@@ -21,7 +19,7 @@
             <%= if Coherence.logged_in?(@conn) do %>
               <li>Hello <%= Coherence.current_user_name(@conn) %></li>
               <li>
-                <%= DarkstoneWeb.Coherence.ViewHelpers.signout_link(@conn, "Sign Out", "btn btn-danger") %>
+                <%= link "logout", to: session_path(@conn, :delete), method: :delete, class: "btn btn-danger" %>
               </li>
             <% else %>
               <li>
@@ -42,6 +40,5 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
   </body>
 </html>

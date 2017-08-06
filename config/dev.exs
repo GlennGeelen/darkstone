@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :darkstone, Darkstone.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "richardvanderveen",
+  password: "",
   database: "darkstone_dev",
   hostname: "localhost",
   pool_size: 10

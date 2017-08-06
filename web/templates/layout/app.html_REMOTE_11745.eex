@@ -16,21 +16,7 @@
   <body>
     <div class="container">
       <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <%= if Coherence.logged_in?(@conn) do %>
-              <li>Hello <%= Coherence.current_user_name(@conn) %></li>
-              <li>
-                <%= DarkstoneWeb.Coherence.ViewHelpers.signout_link(@conn, "Sign Out", "btn btn-danger") %>
-              </li>
-            <% else %>
-              <li>
-                <%= link "login", to: session_path(@conn, :new), class: "btn btn-primary" %>
-              </li>
-            <% end %>
-          </ul>
-        </nav>
-        <span class="logo"></span>
+          <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

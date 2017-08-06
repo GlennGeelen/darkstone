@@ -37,7 +37,9 @@ defmodule DarkstoneWeb.Router do
   scope "/", DarkstoneWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", CharacterController, :index
+    get "/characters/new", CharacterController, :new
+    post "/characters/create", CharacterController, :create
   end
 
   scope "/", DarkstoneWeb do
