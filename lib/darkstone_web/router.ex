@@ -40,6 +40,9 @@ defmodule DarkstoneWeb.Router do
     get "/", CharacterController, :index
     get "/characters/new", CharacterController, :new
     post "/characters/create", CharacterController, :create
+    get "/characters/:id/edit", CharacterController, :edit
+    put "/characters/:id", CharacterController, :update
+    delete "/characters/:id", CharacterController, :delete
   end
 
   scope "/", DarkstoneWeb do
