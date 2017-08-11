@@ -1,0 +1,9 @@
+<ul>
+  <li> <%= @character.name %> </li>
+</ul>
+
+<div class="fixed-action-btn">
+  <%= link to: character_path(@conn, :index), class: "btn-floating btn-large waves-effect waves-light blue" do %>
+    <i class="material-icons">undo</i>
+  <% end %>
+</div>

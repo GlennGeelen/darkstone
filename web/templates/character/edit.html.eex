@@ -6,3 +6,9 @@
 
   <%= submit "Save character", class: "btn btn-primary" %>
 <% end %>
+
+<div class="fixed-action-btn">
+  <%= link to: character_path(@conn, :index), class: "btn-floating btn-large waves-effect waves-light blue" do %>
+    <i class="material-icons">undo</i>
+  <% end %>
+</div>

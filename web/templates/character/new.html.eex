@@ -2,7 +2,16 @@
   <div class="form-group">
     <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
     <%= error_tag f, :name %>
+
+    <%= select f, :characterClass, ["Indian Scout": "indianScout", "Preacher": "preacher", "Lawman": "lawman", "Rancher": "rancher"], selected: "", prompt: "Choose your class", class: "form-control" %>
+    <%= error_tag f, :characterClass %>
   </div>
 
   <%= submit "Save Character", class: "btn btn-primary" %>
 <% end %>
+
+<div class="fixed-action-btn">
+  <%= link to: character_path(@conn, :index), class: "btn-floating btn-large waves-effect waves-light blue" do %>
+    <i class="material-icons">undo</i>
+  <% end %>
+</div>
