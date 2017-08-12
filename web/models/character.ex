@@ -58,7 +58,7 @@ defmodule Darkstone.Character do
       :level,
       :experience,
       :darkstone
-      ])
+        ])
     |> validate_required([:name, :characterClass])
   end
 end
