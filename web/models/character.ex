@@ -10,7 +10,7 @@ defmodule Darkstone.Character do
     field :spirit, :integer
     field :lore, :integer
     field :luck, :integer
-    field :initiatve, :integer
+    field :initiative, :integer
     field :rangeToHit, :integer
     field :meleeToHit, :integer
     field :combat, :integer
@@ -22,7 +22,7 @@ defmodule Darkstone.Character do
     field :armor, :integer
     field :spiritArmor, :integer
     field :bonusDamage, :integer
-    field :willPower, :integer
+    field :willpower, :integer
     field :gold, :integer
     field :level, :integer
     field :experience, :integer
@@ -41,7 +41,7 @@ defmodule Darkstone.Character do
       :spirit,
       :lore,
       :luck,
-      :initiatve,
+      :initiative,
       :rangeToHit,
       :meleeToHit,
       :combat,
@@ -53,7 +53,7 @@ defmodule Darkstone.Character do
       :armor,
       :spiritArmor,
       :bonusDamage,
-      :willPower,
+      :willpower,
       :gold,
       :level,
       :experience,

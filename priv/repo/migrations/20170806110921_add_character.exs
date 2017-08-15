@@ -11,7 +11,7 @@ defmodule Darkstone.Repo.Migrations.AddCharacter do
       add :spirit, :integer
       add :lore, :integer
       add :luck, :integer
-      add :initiatve, :integer
+      add :initiative, :integer
       add :rangeToHit, :integer
       add :meleeToHit, :integer
       add :combat, :integer
@@ -23,7 +23,7 @@ defmodule Darkstone.Repo.Migrations.AddCharacter do
       add :armor, :integer
       add :spiritArmor, :integer
       add :bonusDamage, :integer
-      add :willPower, :integer
+      add :willpower, :integer
       add :gold, :integer
       add :level, :integer
       add :experience, :integer

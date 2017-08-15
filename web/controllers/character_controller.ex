@@ -16,6 +16,7 @@ defmodule Darkstone.CharacterController do
   end
 
   def create(conn, %{"character" => character}) do
+    IO.inspect(character)
     initializedCharacter = initializeCharacter(character["characterClass"], character)
     changeset = Character.changeset(%Character{}, initializedCharacter)
 
@@ -63,7 +64,7 @@ defmodule Darkstone.CharacterController do
     render conn, "details.html", character: character
   end
 
-  def initializeCharacter("preacher", character) do
+  def initializeCharacter("Preacher", character) do
     %{
       "agility" => 1,
       "strength" => 3,
@@ -71,7 +72,7 @@ defmodule Darkstone.CharacterController do
       "spirit" => 1,
       "lore" => 1,
       "luck" => 1,
-      "initiatve" => 1,
+      "initiative" => 1,
       "rangeToHit" => 1,
       "meleeToHit" => 1,
       "combat" => 1,
@@ -83,7 +84,7 @@ defmodule Darkstone.CharacterController do
       "armor" => 1,
       "spiritArmor" => 1,
       "bonusDamage" => 1,
-      "willPower" => 1,
+      "willpower" => 1,
       "gold" => 0,
       "level" => 1,
       "experience" => 0,
@@ -92,7 +93,7 @@ defmodule Darkstone.CharacterController do
     |> Map.merge(character)
   end
 
-  def initializeCharacter("indianScout", character) do
+  def initializeCharacter("Indian Scout", character) do
     %{
       "agility" => 1,
       "strength" => 3,
@@ -100,7 +101,7 @@ defmodule Darkstone.CharacterController do
       "spirit" => 1,
       "lore" => 1,
       "luck" => 1,
-      "initiatve" => 1,
+      "initiative" => 1,
       "rangeToHit" => 1,
       "meleeToHit" => 1,
       "combat" => 1,
@@ -112,7 +113,7 @@ defmodule Darkstone.CharacterController do
       "armor" => 1,
       "spiritArmor" => 1,
       "bonusDamage" => 1,
-      "willPower" => 1,
+      "willpower" => 1,
       "gold" => 0,
       "level" => 1,
       "experience" => 0,
@@ -120,7 +121,7 @@ defmodule Darkstone.CharacterController do
     }
     |> Map.merge(character)
   end
-  def initializeCharacter("rancher", character) do
+  def initializeCharacter("Rancher", character) do
     %{
       "agility" => 1,
       "strength" => 3,
@@ -128,7 +129,7 @@ defmodule Darkstone.CharacterController do
       "spirit" => 1,
       "lore" => 1,
       "luck" => 1,
-      "initiatve" => 1,
+      "initiative" => 1,
       "rangeToHit" => 1,
       "meleeToHit" => 1,
       "combat" => 1,
@@ -140,7 +141,7 @@ defmodule Darkstone.CharacterController do
       "armor" => 1,
       "spiritArmor" => 1,
       "bonusDamage" => 1,
-      "willPower" => 1,
+      "willpower" => 1,
       "gold" => 0,
       "level" => 1,
       "experience" => 0,
@@ -148,7 +149,7 @@ defmodule Darkstone.CharacterController do
     }
     |> Map.merge(character)
   end
-  def initializeCharacter("lawman", character) do
+  def initializeCharacter("Lawman", character) do
     %{
       "agility" => 1,
       "strength" => 3,
@@ -156,7 +157,7 @@ defmodule Darkstone.CharacterController do
       "spirit" => 1,
       "lore" => 1,
       "luck" => 1,
-      "initiatve" => 1,
+      "initiative" => 1,
       "rangeToHit" => 1,
       "meleeToHit" => 1,
       "combat" => 1,
@@ -168,7 +169,7 @@ defmodule Darkstone.CharacterController do
       "armor" => 1,
       "spiritArmor" => 1,
       "bonusDamage" => 1,
-      "willPower" => 1,
+      "willpower" => 1,
       "gold" => 0,
       "level" => 1,
       "experience" => 0,
@@ -176,9 +177,4 @@ defmodule Darkstone.CharacterController do
     }
     |> Map.merge(character)
   end
-
-  def initializeCharacter("", character) do
-    character
-  end
-
 end

@@ -3,7 +3,7 @@
     <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
     <%= error_tag f, :name %>
 
-    <%= select f, :characterClass, ["Indian Scout": "indianScout", "Preacher": "preacher", "Lawman": "lawman", "Rancher": "rancher"], selected: "", prompt: "Choose your class", class: "form-control" %>
+    <%= select f, :characterClass, ["Indian Scout", "Preacher", "Lawman", "Rancher"], selected: "", prompt: "Choose your class", class: "form-control" %>
     <%= error_tag f, :characterClass %>
   </div>
 
