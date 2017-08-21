@@ -16,7 +16,16 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <%= if Coherence.logged_in?(@conn) do %>
+              <li>Hello <%= Coherence.current_user_name(@conn) %></li>
+              <li>
+                <%= link "logout", to: session_path(@conn, :delete), method: :delete, class: "btn btn-danger" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link "login", to: session_path(@conn, :new), class: "btn btn-primary" %>
+              </li>
+            <% end %>
           </ul>
         </nav>
         <span class="logo"></span>
