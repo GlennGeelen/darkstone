@@ -1,3 +1,3 @@
 defmodule Darkstone.PageViewTest do
-  use Darkstone.ConnCase, async: true
+  use DarkstoneWeb.ConnCase, async: true
 end

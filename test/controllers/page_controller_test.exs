@@ -1,5 +1,5 @@
 defmodule Darkstone.PageControllerTest do
-  use Darkstone.ConnCase
+  use DarkstoneWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

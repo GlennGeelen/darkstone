@@ -1,3 +1,3 @@
 defmodule Darkstone.LayoutViewTest do
-  use Darkstone.ConnCase, async: true
+  use DarkstoneWeb.ConnCase, async: true
 end
