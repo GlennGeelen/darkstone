@@ -14,7 +14,7 @@ use Mix.Config
 config :darkstone, Darkstone.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/cahce_manifest.json"
 
 # Do not print debug messages in production
 config :logger, level: :info
