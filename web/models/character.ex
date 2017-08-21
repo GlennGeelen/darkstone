@@ -61,4 +61,118 @@ defmodule Darkstone.Character do
         ])
     |> validate_required([:name, :characterClass])
   end
+
+  def initialize("Preacher", character) do
+    %{
+      "agility" => 1,
+      "strength" => 3,
+      "cunning" => 2,
+      "spirit" => 1,
+      "lore" => 1,
+      "luck" => 1,
+      "initiative" => 1,
+      "rangeToHit" => 1,
+      "meleeToHit" => 1,
+      "combat" => 1,
+      "maxGrit" => 1,
+      "actualGrid" => 1,
+      "health" => 1,
+      "sanity" => 1,
+      "defense" => 1,
+      "armor" => 1,
+      "spiritArmor" => 1,
+      "bonusDamage" => 1,
+      "willpower" => 1,
+      "gold" => 0,
+      "level" => 1,
+      "experience" => 0,
+      "darkstone" => 1
+    }
+    |> Map.merge(character)
+  end
+
+  def initialize("Indian Scout", character) do
+    %{
+      "agility" => 1,
+      "strength" => 3,
+      "cunning" => 2,
+      "spirit" => 1,
+      "lore" => 1,
+      "luck" => 1,
+      "initiative" => 1,
+      "rangeToHit" => 1,
+      "meleeToHit" => 1,
+      "combat" => 1,
+      "maxGrit" => 1,
+      "actualGrid" => 1,
+      "health" => 1,
+      "sanity" => 1,
+      "defense" => 1,
+      "armor" => 1,
+      "spiritArmor" => 1,
+      "bonusDamage" => 1,
+      "willpower" => 1,
+      "gold" => 0,
+      "level" => 1,
+      "experience" => 0,
+      "darkstone" => 1
+    }
+    |> Map.merge(character)
+  end
+  def initialize("Rancher", character) do
+    %{
+      "agility" => 1,
+      "strength" => 3,
+      "cunning" => 2,
+      "spirit" => 1,
+      "lore" => 1,
+      "luck" => 1,
+      "initiative" => 1,
+      "rangeToHit" => 1,
+      "meleeToHit" => 1,
+      "combat" => 1,
+      "maxGrit" => 1,
+      "actualGrid" => 1,
+      "health" => 1,
+      "sanity" => 1,
+      "defense" => 1,
+      "armor" => 1,
+      "spiritArmor" => 1,
+      "bonusDamage" => 1,
+      "willpower" => 1,
+      "gold" => 0,
+      "level" => 1,
+      "experience" => 0,
+      "darkstone" => 1
+    }
+    |> Map.merge(character)
+  end
+  def initialize("Lawman", character) do
+    %{
+      "agility" => 1,
+      "strength" => 3,
+      "cunning" => 2,
+      "spirit" => 1,
+      "lore" => 1,
+      "luck" => 1,
+      "initiative" => 1,
+      "rangeToHit" => 1,
+      "meleeToHit" => 1,
+      "combat" => 1,
+      "maxGrit" => 1,
+      "actualGrid" => 1,
+      "health" => 1,
+      "sanity" => 1,
+      "defense" => 1,
+      "armor" => 1,
+      "spiritArmor" => 1,
+      "bonusDamage" => 1,
+      "willpower" => 1,
+      "gold" => 0,
+      "level" => 1,
+      "experience" => 0,
+      "darkstone" => 1
+    }
+    |> Map.merge(character)
+  end
 end

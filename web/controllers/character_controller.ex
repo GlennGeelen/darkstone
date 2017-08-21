@@ -2,25 +2,18 @@ defmodule Darkstone.CharacterController do
   use Darkstone.Web, :controller
 
   alias Darkstone.Character
+  alias Darkstone.Characters
 
   def index(conn, _params) do
-    characters = Repo.all(Character)
-
-    render(conn, "index.html", characters: characters)
+    render(conn, "index.html", characters: Characters.list_characters)
   end
 
   def new(conn, _params) do
-    changeset = Character.changeset(%Character{}, %{})
-
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: Character.changeset(%Character{}, %{}))
   end
 
   def create(conn, %{"character" => character}) do
-    IO.inspect(character)
-    initializedCharacter = initializeCharacter(character["characterClass"], character)
-    changeset = Character.changeset(%Character{}, initializedCharacter)
-
-    case Repo.insert(changeset) do
+    case Characters.create_character(character) do
       {:ok, _character} ->
         conn
         |> put_flash(:info, "Character created")
@@ -31,150 +24,37 @@ defmodule Darkstone.CharacterController do
   end
 
   def edit(conn, %{"id" => character_id}) do
-    character = Repo.get(Character, character_id)
-    changeset = Character.changeset(character)
+    changeset =
+      Characters.get_character!(character_id)
+      |> Character.changeset
 
-    render conn, "edit.html", changeset: changeset, character: character
+    render conn, "edit.html", changeset: changeset
   end
 
-  def update(conn, %{"id" => character_id, "character" => name}) do
-    old_character = Repo.get(Character, character_id)
-    changeset = Character.changeset(old_character, name)
-
-    case Repo.update(changeset) do
+  def update(conn, %{"id" => character_id, "character" => character}) do
+    Characters.get_character!(character_id)
+    |> Characters.update_character(character)
+    |> case do
       {:ok, _character } ->
         conn
         |> put_flash(:info, "Character updated")
         |> redirect(to: character_path(conn, :index))
       {:error, changeset} ->
-        render conn, "edit.html", changeset: changeset, character: old_character
+        render conn, "edit.html", changeset: changeset
     end
   end
 
   def delete(conn, %{"id" => character_id}) do
-    Repo.get!(Character, character_id) |> Repo.delete!
-
+    Characters.get_character!(character_id)
+    |> Characters.delete_character()
     conn
     |> put_flash(:info, "Character deleted")
     |> redirect(to: character_path(conn, :index))
   end
 
   def details(conn, %{"id" => character_id}) do
-    character = Repo.get(Character, character_id)
+    character = Characters.get_character!(character_id)
+
     render conn, "details.html", character: character
-  end
-
-  def initializeCharacter("Preacher", character) do
-    %{
-      "agility" => 1,
-      "strength" => 3,
-      "cunning" => 2,
-      "spirit" => 1,
-      "lore" => 1,
-      "luck" => 1,
-      "initiative" => 1,
-      "rangeToHit" => 1,
-      "meleeToHit" => 1,
-      "combat" => 1,
-      "maxGrit" => 1,
-      "actualGrid" => 1,
-      "health" => 1,
-      "sanity" => 1,
-      "defense" => 1,
-      "armor" => 1,
-      "spiritArmor" => 1,
-      "bonusDamage" => 1,
-      "willpower" => 1,
-      "gold" => 0,
-      "level" => 1,
-      "experience" => 0,
-      "darkstone" => 1
-    }
-    |> Map.merge(character)
-  end
-
-  def initializeCharacter("Indian Scout", character) do
-    %{
-      "agility" => 1,
-      "strength" => 3,
-      "cunning" => 2,
-      "spirit" => 1,
-      "lore" => 1,
-      "luck" => 1,
-      "initiative" => 1,
-      "rangeToHit" => 1,
-      "meleeToHit" => 1,
-      "combat" => 1,
-      "maxGrit" => 1,
-      "actualGrid" => 1,
-      "health" => 1,
-      "sanity" => 1,
-      "defense" => 1,
-      "armor" => 1,
-      "spiritArmor" => 1,
-      "bonusDamage" => 1,
-      "willpower" => 1,
-      "gold" => 0,
-      "level" => 1,
-      "experience" => 0,
-      "darkstone" => 1
-    }
-    |> Map.merge(character)
-  end
-  def initializeCharacter("Rancher", character) do
-    %{
-      "agility" => 1,
-      "strength" => 3,
-      "cunning" => 2,
-      "spirit" => 1,
-      "lore" => 1,
-      "luck" => 1,
-      "initiative" => 1,
-      "rangeToHit" => 1,
-      "meleeToHit" => 1,
-      "combat" => 1,
-      "maxGrit" => 1,
-      "actualGrid" => 1,
-      "health" => 1,
-      "sanity" => 1,
-      "defense" => 1,
-      "armor" => 1,
-      "spiritArmor" => 1,
-      "bonusDamage" => 1,
-      "willpower" => 1,
-      "gold" => 0,
-      "level" => 1,
-      "experience" => 0,
-      "darkstone" => 1
-    }
-    |> Map.merge(character)
-  end
-  def initializeCharacter("Lawman", character) do
-    %{
-      "agility" => 1,
-      "strength" => 3,
-      "cunning" => 2,
-      "spirit" => 1,
-      "lore" => 1,
-      "luck" => 1,
-      "initiative" => 1,
-      "rangeToHit" => 1,
-      "meleeToHit" => 1,
-      "combat" => 1,
-      "maxGrit" => 1,
-      "actualGrid" => 1,
-      "health" => 1,
-      "sanity" => 1,
-      "defense" => 1,
-      "armor" => 1,
-      "spiritArmor" => 1,
-      "bonusDamage" => 1,
-      "willpower" => 1,
-      "gold" => 0,
-      "level" => 1,
-      "experience" => 0,
-      "darkstone" => 1
-    }
-    |> Map.merge(character)
   end
 end
