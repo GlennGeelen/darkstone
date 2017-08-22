@@ -11,7 +11,7 @@ defmodule Darkstone do
       # Start the Ecto repository
       supervisor(Darkstone.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Darkstone.Endpoint, []),
+      supervisor(DarkstoneWeb.Endpoint, []),
       # Start your own worker by calling: Darkstone.Worker.start_link(arg1, arg2, arg3)
       # worker(Darkstone.Worker, [arg1, arg2, arg3]),
     ]
@@ -25,7 +25,7 @@ defmodule Darkstone do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Darkstone.Endpoint.config_change(changed, removed)
+    DarkstoneWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -10,10 +10,10 @@ config :darkstone,
   ecto_repos: [Darkstone.Repo]
 
 # Configures the endpoint
-config :darkstone, Darkstone.Endpoint,
+config :darkstone, DarkstoneWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "+qQrWWCoFi44cAFcIYdDY46Xn1p2/eO3LOVHnn8Ifq7kZlYId7pWKla5gCI7etkY",
-  render_errors: [view: Darkstone.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: DarkstoneWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Darkstone.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -28,17 +28,17 @@ import_config "#{Mix.env}.exs"
 
 # %% Coherence Configuration %%   Don't remove this line
 config :coherence,
-  user_schema: Darkstone.User,
+  user_schema: DarkstoneWeb.User,
   repo: Darkstone.Repo,
   module: Darkstone,
-  router: Darkstone.Router,
-  messages_backend: Darkstone.Coherence.Messages,
+  router: DarkstoneWeb.Router,
+  messages_backend: DarkstoneWeb.Coherence.Messages,
   logged_out_url: "/",
   email_from_name: "Your Name",
   email_from_email: "yourname@example.com",
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :registerable]
 
-config :coherence, Darkstone.Coherence.Mailer,
+config :coherence, DarkstoneWeb.Coherence.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: "your api key here"
 # %% End Coherence Configuration %%
