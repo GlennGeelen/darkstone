@@ -1,0 +1,141 @@
+<div class="container-1">
+  <div class="box-1">
+    <table style="width:100%">
+  <tr>
+    <td>Name:</td>
+    <td><%= @character.name %></td>
+  </tr>
+  <tr>
+    <td>Class:</td>
+    <td><%= @character.characterClass %></td>
+  </tr>
+</table>
+<table style="width:100%">
+  <tr>
+    <th>Initiative:</th>
+    <th>Combat:</th>
+    <th>Melee:</th>
+    <th>Ranged:</th>
+  </tr>
+<tr>
+    <td><%= @character.initiative %></td>
+    <td><%= @character.combat %></td>
+    <td><%= @character.meleeToHit %>+</td>
+    <td><%= @character.rangeToHit %>+</td>
+</tr>
+</table>
+  </div>
+  <div class="box-2">
+    <table style="width:100%">
+      <tr>
+        <th>Agility:</th>
+        <th>Cunning:</th>
+        <th>Spirit:</th>
+      </tr>
+    <tr>
+        <td><%= @character.agility %></td>
+        <td><%= @character.cunning %></td>
+        <td><%= @character.spirit %></td>
+    </tr>
+    </table>
+    <table style="width:100%">
+      <tr>
+        <th>Strength:</th>
+        <th>Lore:</th>
+        <th>Luck:</th>
+      </tr>
+    <tr>
+        <td><%= @character.strength %></td>
+        <td><%= @character.lore %></td>
+        <td><%= @character.luck %></td>
+    </tr>
+    </table>
+  </div>
+  <div class="box-3">
+  <table style="width:100%">
+    <tr>
+      <th>Max Health:</th>
+      <th>Wounds:</th>
+      <th>Defense:</th>
+    </tr>
+  <tr>
+      <td><%= @character.health %></td>
+      <td> - </td>
+      <td><%= @character.defense %></td>
+  </tr>
+</table>
+    <table style="width:100%">
+      <tr>
+        <th>Max Sanity:</th>
+        <th>Sanity:</th>
+        <th>Willpower:</th>
+      </tr>
+    <tr>
+        <td><%= @character.sanity %></td>
+        <td>-</td>
+        <td><%= @character.willpower %></td>
+    </tr>
+    </table>
+  </div>
+</div>
+
+<div class="container-2">
+  <div class="container-2-box-1">
+    <h3>Items and mutations </h3>
+    <p> List of items </p>
+  </div>
+  <div class="container-2-box-2">
+    <table style="width:100%">
+      <tr>
+        <th>Max Grit:</th>
+        <th>Grit:</th>
+        <th>Corruption:</th>
+      </tr>
+    <tr>
+        <td><%= @character.maxGrit %></td>
+        <td><%= @character.actualGrid %></td>
+        <td>-</td>
+    </tr>
+    </table>
+
+    <table style="width:100%">
+      <tr>
+        <th>Experience:</th>
+        <th>Gold:</th>
+        <th>Darkstone:</th>
+      </tr>
+    <tr>
+        <td><%= @character.experience %></td>
+        <td><%= @character.gold %></td>
+        <td><%= @character.darkstone %></td>
+    </tr>
+    </table>
+
+    <table style="width:100%">
+      <tr>
+        <th>Bandages:</th>
+        <th>Tonic:</th>
+        <th>Dynamite:</th>
+      </tr>
+    <tr>
+        <td><%= @character.strength %></td>
+        <td><%= @character.lore %></td>
+        <td><%= @character.luck %></td>
+    </tr>
+    </table>
+
+    <table style="width:100%">
+      <tr>
+        <th>Whiskey:</th>
+        <th>Herbs:</th>
+        <th>Flash:</th>
+      </tr>
+    <tr>
+        <td><%= @character.strength %></td>
+        <td><%= @character.lore %></td>
+        <td><%= @character.luck %></td>
+    </tr>
+    </table>
+
+  </div>
+</div>

@@ -6,6 +6,8 @@ defmodule DarkstoneWeb.User do
   schema "users" do
     field :name, :string
     field :email, :string
+    has_many :characters, DarkstoneWeb.Character
+
     coherence_schema()
 
     timestamps()

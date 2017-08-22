@@ -1,0 +1,20 @@
+<h4> Characters </h4>
+
+<ul class="collection">
+  <%= for character <- @characters do %>
+    <li class="collection-item">
+      <%= character.name %>
+      <div class="right">
+        <%= link "Details", to: character_path(@conn, :show, character) %>
+        <%= link "Edit", to: character_path(@conn, :edit, character) %>
+        <%= link "Delete", to: character_path(@conn, :delete, character), method: :delete %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<div class="fixed-action-btn">
+  <%= link to: character_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+    <i class="material-icons">add</i>
+  <% end %>
+</div>

@@ -1,1 +1,54 @@
 /* This file is for your main application css. */
+
+.help-block{
+  color: red;
+  text-transform: capitalize;
+  position: absolute;
+  top: 40px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+@media(min-width: 768px) {
+  .container-1 {
+   display: flex;
+   justify-content: space-between;
+  }
+
+  .container-2 {
+   display: flex;
+   justify-content: space-between;
+  }
+}
+
+.container-1 div, .container-2 div{
+  padding: 10px;
+}
+
+.box-1{
+  flex-basis: 34%;
+  background-color: #C28D0A;
+}
+
+.box-2{
+  flex-basis: 33%;
+  background-color: #C28D0A;
+}
+
+.box-3{
+  flex-basis: 33%;
+  background-color: #C28D0A;
+}
+
+.container-2-box-1{
+  flex-basis: 71%;
+  background-color: #C28D0A;
+}
+
+.container-2-box-2{
+  flex-basis: 29%;
+  background-color: #C28D0A;
+}
