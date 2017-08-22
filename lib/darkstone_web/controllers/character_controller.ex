@@ -1,8 +1,8 @@
-defmodule Darkstone.CharacterController do
-  use Darkstone.Web, :controller
+defmodule DarkstoneWeb.CharacterController do
+  use DarkstoneWeb.Web, :controller
 
-  alias Darkstone.Character
-  alias Darkstone.Characters
+  alias DarkstoneWeb.Character
+  alias DarkstoneWeb.Characters
 
   def index(conn, _params) do
     render(conn, "index.html",

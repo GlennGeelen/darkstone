@@ -45,7 +45,6 @@ defmodule DarkstoneWeb.Router do
     # Add protected routes below
 
     resources "/characters", CharacterController
-
   end
 
   # Other scopes may use custom stacks.

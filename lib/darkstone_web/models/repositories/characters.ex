@@ -1,16 +1,13 @@
-defmodule Darkstone.Characters do
+defmodule DarkstoneWeb.Characters do
 
   alias Darkstone.Repo
-  alias Darkstone.Character
+  alias DarkstoneWeb.Character
   import Ecto
 
   def create_character(conn, character) do
     initializedCharacter =
-    case character["characterClass"] do
-      "" -> character
-      _ ->  character["characterClass"]
-            |> Character.initialize(character)
-    end
+      character["characterClass"]
+      |> Character.initialize(character)
 
     Coherence.current_user(conn)
     |> build_assoc(:characters)
