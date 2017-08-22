@@ -2,6 +2,7 @@ defmodule Darkstone.Character do
   use Darkstone.Web, :model
 
   schema "characters" do
+    belongs_to :user, Darkstone.User
     field :name, :string
     field :characterClass, :string
     field :agility, :integer
@@ -119,7 +120,7 @@ defmodule Darkstone.Character do
     }
     |> Map.merge(character)
   end
-  
+
   def initialize("Rancher", character) do
     %{
       "agility" => 2,

@@ -5,7 +5,7 @@
     <li class="collection-item">
       <%= character.name %>
       <div class="right">
-        <%= link "Details", to: character_path(@conn, :details, character) %>
+        <%= link "Details", to: character_path(@conn, :show, character) %>
         <%= link "Edit", to: character_path(@conn, :edit, character) %>
         <%= link "Delete", to: character_path(@conn, :delete, character), method: :delete %>
       </div>

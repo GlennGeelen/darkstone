@@ -37,18 +37,15 @@ defmodule DarkstoneWeb.Router do
   scope "/", DarkstoneWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", CharacterController, :index
-    get "/characters/new", CharacterController, :new
-    get "/characters/details/:id", CharacterController, :details
-    post "/characters/create", CharacterController, :create
-    get "/characters/:id/edit", CharacterController, :edit
-    put "/characters/:id", CharacterController, :update
-    delete "/characters/:id", CharacterController, :delete
+    get "/", PageController, :index
   end
 
   scope "/", DarkstoneWeb do
     pipe_through :protected
     # Add protected routes below
+
+    resources "/characters", CharacterController
+
   end
 
   # Other scopes may use custom stacks.
