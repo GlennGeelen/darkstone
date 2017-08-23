@@ -38,7 +38,8 @@ defmodule Darkstone.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:coherence, "~> 0.4"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:wallaby, "~> 0.19.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
