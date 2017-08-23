@@ -43,6 +43,8 @@ defmodule DarkstoneWeb.Router do
   scope "/", DarkstoneWeb do
     pipe_through :protected
     # Add protected routes below
+
+    resources "/characters", CharacterController
   end
 
   # Other scopes may use custom stacks.
