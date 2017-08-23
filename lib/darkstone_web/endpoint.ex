@@ -1,6 +1,10 @@
 defmodule DarkstoneWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :darkstone
 
+  if Application.get_env(:your_app, :sql_sandbox) do
+  plug Phoenix.Ecto.SQL.Sandbox
+  end
+
   socket "/socket", DarkstoneWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
